@@ -11,7 +11,7 @@ const app = express();
 
 // use parcel bundler
 if (process.env.NODE_ENV !== 'production') {
-  const bundler = new Bundler('./src/containers/app.jsx', {
+  const bundler = new Bundler('./src/index.html', {
     outDir: `${__dirname}/../public`,
   });
   bundler.bundle();

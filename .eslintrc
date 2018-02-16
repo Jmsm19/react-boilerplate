@@ -92,6 +92,7 @@
       "error",
       "unix"
     ],
+    "global-require": 0,
     "quotes": [
       2,
       "single",

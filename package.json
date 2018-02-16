@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./server/index.js",
-    "build": "NODE_ENV=production npx parcel build src/index.js -d public/js/ --no-cache",
+    "build": "NODE_ENV=production npx parcel build src/index.html -d public/ --no-cache",
     "lint": "eslint . --ext .js,.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,11 +30,14 @@
     "express": "^4.16.2",
     "morgan": "^1.9.0",
     "opn": "^5.2.0",
-    "parcel-bundler": "^1.6.0",
+    "parcel-bundler": "^1.6.1",
     "postcss-modules": "^1.1.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
@@ -47,9 +50,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.6.1",
-    "nodemon": "^1.14.12",
+    "nodemon": "^1.15.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.10.2",
-    "prop-types": "^15.6.0"
+    "prettier": "^1.10.2"
   }
 }
