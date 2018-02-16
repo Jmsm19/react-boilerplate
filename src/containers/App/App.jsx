@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect as ConnectRedux } from 'react-redux';
 
-import * as actionTypes from '../../store/actions';
+import { doSomething } from '../../store/actions';
 
 const App = props => (
   <div>
@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onAction: () => dispatch({ type: actionTypes.DO_SOMETHING, data: { number: 1 } }),
+  onAction: () => dispatch(doSomething(Math.floor(Math.random() * 10))),
 });
 
 export default ConnectRedux(mapStateToProps, mapDispatchToProps)(App);

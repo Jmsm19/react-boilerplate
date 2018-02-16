@@ -1,4 +1,5 @@
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actionTypes';
+import { updateObject } from '../utility';
 
 const initialState = {
   something: 0,
@@ -7,10 +8,7 @@ const initialState = {
 const somethingReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.DO_SOMETHING:
-      return {
-        ...state,
-        something: state.something + action.data.number,
-      };
+      return updateObject(state, { something: state.something + action.number });
     default:
       break;
   }
