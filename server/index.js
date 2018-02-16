@@ -2,7 +2,8 @@
  * Module dependencies.
  */
 import http from 'http';
-import app from './app'; // <-- import app
+import app from './app';
+import opn from 'opn';
 
 /**
  * Simple logger function.
@@ -75,7 +76,7 @@ function onListening() {
   const addr = server.address();
   const bind = `${typeof addr === 'string' ? 'pipe' : 'port'} ${typeof addr === 'string' ? addr : addr.port}`;
   log(`Server is listening on ${bind}`);
-  log(`Visit: http://localhost:${addr.port}`);
+  opn(`http://localhost:${addr.port}`);
 }
 /**
  * Start server.
