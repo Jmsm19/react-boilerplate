@@ -4,7 +4,7 @@ import { connect as ConnectRedux } from 'react-redux';
 
 import { doSomething } from '../../store/actions';
 
-const App = props => (
+export const App = props => (
   <div>
     <button onClick={props.onAction}>Increase Number</button>
     <h1>Hello Man1{props.smt}!</h1>

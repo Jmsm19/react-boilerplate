@@ -1,13 +1,16 @@
 {
   "name": "react_boilerplate",
   "version": "1.0.0",
-  "description": "My React boilerplate using Parcel, Express, Babel, Eslint, Prettier, and more.",
+  "description": "My React boilerplate using Redux, Parcel, Express, Babel, Eslint, Prettier, and more.",
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./server/index.js",
     "build": "NODE_ENV=production npx parcel build src/index.html -d public/ --no-cache",
     "lint": "eslint . --ext .js,.jsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
   },
   "pre-commit": [
     "lint"
@@ -45,15 +48,21 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.12.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.6.1",
+    "jest": "^22.3.0",
+    "jest-enzyme": "^4.2.0",
     "nodemon": "^1.15.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.10.2"
+    "prettier": "^1.10.2",
+    "react-test-renderer": "^16.2.0"
   }
 }
