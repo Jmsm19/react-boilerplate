@@ -1,12 +1,23 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { connect as ConnectRedux } from 'react-redux';
 
 import { doSomething } from '../../store/actions';
+import classNames from './App.css';
+
+console.log(classNames);
 
 export const App = props => (
   <div>
-    <button onClick={props.onAction}>Increase Number</button>
+    <Helmet>
+      <title>Manten | Inicio</title>
+      <meta name="description" content="App component" />
+    </Helmet>
+
+    <button className={classNames.Btn} onClick={props.onAction}>
+      Increase Number
+    </button>
     <h1>Hello Man1{props.smt}!</h1>
   </div>
 );
