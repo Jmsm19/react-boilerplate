@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Aux from '../utility/Aux';
+
 const IndexPage = props => (
-  <div>
+  <Aux>
     <h1>Hello Man1{props.smt}!</h1>
-  </div>
+  </Aux>
 );
 
 IndexPage.propTypes = {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect as ConnectRedux } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Helmet from 'react-helmet';
-import { Button, Icon } from 'antd';
 import PropTypes from 'prop-types';
 
+import Header from '../../components/Header/Header';
 import IndexPage from '../../pages/index';
 import NotFoundPage from '../../pages/404';
 
@@ -21,19 +21,8 @@ const Layout = props => (
 
     <Router>
       <div>
-        <nav>
-          <Button type="primary" onClick={props.onAction}>
-            Increase Number <Icon type="plus" />
-          </Button>
+        <Header onAction={props.onAction} />
 
-          <Button type="primary">
-            <NavLink to="/">Home</NavLink>
-          </Button>
-
-          <Button type="primary">
-            <NavLink to="/NotFound">NotFound</NavLink>
-          </Button>
-        </nav>
         <div className={classNames.Content}>
           <Switch>
             <Route exact path="/" render={() => <IndexPage smt={props.smt} />} />

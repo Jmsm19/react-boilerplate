@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Aux from '../utility/Aux';
+
 const NotFoundPage = () => (
-  <div>
+  <Aux>
     <h1>NOT FOUND</h1>
-  </div>
+  </Aux>
 );
 
 export default NotFoundPage;
