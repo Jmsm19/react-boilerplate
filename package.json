@@ -10,7 +10,10 @@
     "test": "jest"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+    }
   },
   "pre-commit": [
     "lint"
@@ -61,6 +64,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.6.1",
     "jest": "^22.3.0",
+    "jest-css-modules": "^1.1.0",
     "jest-enzyme": "^4.2.0",
     "nodemon": "^1.15.0",
     "pre-commit": "^1.2.2",
