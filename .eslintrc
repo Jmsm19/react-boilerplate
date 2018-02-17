@@ -2,8 +2,7 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true,
-    "jest/globals": true
+    "node": true
   },
   "extends": [
     "airbnb",
@@ -24,8 +23,7 @@
   },
   "plugins": [
     "css-modules",
-    "prettier",
-    "jest"
+    "prettier"
   ],
   "rules": {
     "no-unused-vars": [

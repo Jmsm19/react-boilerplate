@@ -1,25 +1,18 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { connect as ConnectRedux } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { doSomething } from '../../store/actions';
-import classNames from './App.css';
-
-console.log(classNames);
+import Layout from '../Layout/Layout';
 
 export const App = props => (
-  <div>
-    <Helmet>
-      <title>Manten | Inicio</title>
-      <meta name="description" content="App component" />
-    </Helmet>
-
-    <button className={classNames.Btn} onClick={props.onAction}>
-      Increase Number
-    </button>
-    <h1>Hello Man1{props.smt}!</h1>
-  </div>
+  <Layout onAction={props.onAction} smt={props.smt}>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, alias! Rem nam neque accusantium laboriosam
+      earum? Accusamus, reiciendis. Cumque atque nisi commodi placeat, nulla cum itaque possimus consequatur veniam
+      dolorem.
+    </p>
+  </Layout>
 );
 
 App.propTypes = {

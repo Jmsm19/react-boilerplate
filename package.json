@@ -6,19 +6,23 @@
   "scripts": {
     "start": "babel-node ./server/index.js",
     "build": "NODE_ENV=production npx parcel build src/index.html -d public/ --no-cache",
-    "lint": "eslint . --ext .js,.jsx",
-    "test": "jest"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
-    "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
-    }
+    "lint": "eslint . --ext .js,.jsx"
   },
   "pre-commit": [
     "lint"
   ],
-  "keywords": [],
+  "keywords": [
+    "react",
+    "boilerplate",
+    "redux",
+    "parcel",
+    "css modules",
+    "express",
+    "prettier",
+    "eslint",
+    "babel",
+    "antd"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -52,21 +56,16 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "babel-plugin-import": "^1.6.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-css-modules": "^2.7.5",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.12.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.6.1",
-    "jest": "^22.3.0",
-    "jest-css-modules": "^1.1.0",
-    "jest-enzyme": "^4.2.0",
     "nodemon": "^1.15.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.10.2",
