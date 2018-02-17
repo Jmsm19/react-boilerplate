@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Aux from '../utility/Aux';
+import Aux from '../utils/Aux';
 
 const IndexPage = props => (
   <Aux>

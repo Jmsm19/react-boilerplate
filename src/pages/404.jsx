@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Aux from '../utility/Aux';
+import Aux from '../utils/Aux';
 
 const NotFoundPage = () => (
   <Aux>
