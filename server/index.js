@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+require('dotenv').config();
 import http from 'http';
 import app from './app';
 import opn from 'opn';
