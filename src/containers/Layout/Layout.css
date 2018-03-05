@@ -1,3 +1,25 @@
+.Logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+
+.FullPage {
+  height: 100vh;
+}
+
 .Content {
-  padding: 20px;
+  margin: 24px 16px 0;
+  height: 100%;
+  display: grid;
+}
+
+.ContentBox {
+  padding: 24px;
+  background: #fff;
+  min-height: 360px;
+}
+
+.Footer {
+  text-align: center;
 }

@@ -1,50 +1,59 @@
 import React from 'react';
-import { connect as ConnectRedux } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Layout as AntdLayout, Menu, Icon } from 'antd';
+import uuid from 'uuid/v4';
 
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-
-import Header from '../../components/Header/Header';
 import IndexPage from '../../pages/index';
 import NotFoundPage from '../../pages/404';
 
-import { doSomething } from '../../store/actions';
 import classNames from './Layout.css';
+import Aux from '../../utils/Aux';
+import Header from '../../components/Header/Header';
 
-const Layout = props => (
-  <div>
-    <Helmet>
-      <title>Manten | Inicio</title>
-      <meta name="description" content="Layout component" />
-    </Helmet>
+const { Content, Footer, Sider } = AntdLayout;
 
+const Layout = () => (
+  <Aux>
     <Router>
-      <div>
-        <Header onAction={props.onAction} />
-
-        <div className={classNames.Content}>
-          <Switch>
-            <Route exact path="/" render={() => <IndexPage smt={props.smt} />} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </div>
-      </div>
+      <AntdLayout className={classNames.FullPage}>
+        <Sider
+          breakpoint="lg"
+          collapsedWidth="0"
+          onCollapse={(collapsed, type) => {
+            console.log(collapsed, type);
+          }}
+        >
+          <div className={classNames.Logo} />
+          <Menu theme="dark" mode="inline">
+            <Menu.Item key={uuid()}>
+              <Link to="/">
+                <Icon type="home" />
+                <span className="nav-text">Home</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key={uuid()}>
+              <Link to="/NotFound">
+                <Icon type="exclamation-circle-o" />
+                <span className="nav-text">NotFound</span>
+              </Link>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <AntdLayout className={classNames.FullPage}>
+          <Header />
+          <Content className={classNames.Content}>
+            <div className={classNames.ContentBox}>
+              <Switch>
+                <Route exact path="/" component={IndexPage} />
+                <Route component={NotFoundPage} />
+              </Switch>
+            </div>
+          </Content>
+          <Footer className={classNames.Footer}>©2018 Created by Manten</Footer>
+        </AntdLayout>
+      </AntdLayout>
     </Router>
-  </div>
+  </Aux>
 );
 
-Layout.propTypes = {
-  smt: PropTypes.number.isRequired,
-  onAction: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = state => ({
-  smt: state.smt.something,
-});
-
-const mapDispatchToProps = dispatch => ({
-  onAction: () => dispatch(doSomething(Math.floor(Math.random() * 10))),
-});
-
-export default ConnectRedux(mapStateToProps, mapDispatchToProps)(Layout);
+export default Layout;
